@@ -18,6 +18,10 @@ def priority_preemptive(process_list):
 
     remaining_bt = {p[1]: p[2] for p in process_list}
     arrival = {p[1]: p[3] for p in process_list}
+    for p in process_list:
+        if p[2] == 0:
+            completed[p[1]] = [p[3], 0, 0]
+            finished += 1
 
     while finished < n:
 
