@@ -77,7 +77,7 @@ class Dashboard(QMainWindow):
             else:
                 gantt_chart, completed = algorithm(processes)
             
-            self.gantt_chart.draw(gantt_chart, completed)
+            self.gantt_chart.draw(gantt_chart, completed, algo_name)
             self.metrics_table.populate(completed)
         except Exception as e:
             print(f"Error running simulation: {e}")
